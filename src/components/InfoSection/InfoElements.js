@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { ReactComponent as ImageOne} from '../../images/svg-1.svg'
 
 export const InfoContainer = styled.div`
   color: #fff;

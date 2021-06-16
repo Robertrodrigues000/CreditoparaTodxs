@@ -8,10 +8,11 @@ export const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 800px;
+  height: 100vh;
+  position: relative;
   z-index: 1;
 
-  :before {
+  :after {
     content: "";
     position: absolute;
     top: 0;
@@ -85,11 +86,27 @@ export const HeroP = styled.p`
   }
 `;
 
-export const HeroBtnWrapper = styled(Link)`
+export const Button = styled(Link)`
   margin-top: 32px;
+  border-radius: 50px;
+  background: ${({ primary }) => (primary ? "#C52AA0" : "#1446A0")};
+  white-space: nowrap;
+  padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
+  color: #fff;
+  font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
+  outline: none;
+  border: none;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
+  text-decoration: none;
+  justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: ${({ primary }) => (primary ? '#1446A0' : "#C52AA0" )};
+  }
 `;
 
 export const ArrowForward = styled(MdArrowForward)`

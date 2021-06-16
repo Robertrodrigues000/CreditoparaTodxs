@@ -1,7 +1,23 @@
-import React from 'react'
-import { Container, FormWrap, Icon, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, Text } from './SigninElements'
+import React, { useState } from "react";
+import {
+  Container,
+  FormWrap,
+  Icon,
+  FormContent,
+  Form,
+  FormH1,
+  FormLabel,
+  FormInput,
+  FormButton,
+  FormInputRange,
+  Label,
+} from "./SigninElements";
 
 const SignIn = () => {
+  const [nome, setNome] = useState("");
+
+  const [valorCredito, setValorCredito] = useState(0);
+
   return (
     <>
       <Container>
@@ -9,22 +25,33 @@ const SignIn = () => {
           <Icon to="/">CréditoParaTodxs</Icon>
           <FormContent>
             <Form action="#">
-              <FormH1>Cadastre uma nova conta</FormH1>
+              <FormH1>Informe seus dados</FormH1>
               <FormLabel htmlFor="for">Nome</FormLabel>
-              <FormInput type="email" required />
+              <FormInput
+                type="text"
+                onChange={(e) => setNome(e.target.value)}
+                required
+              />
               <FormLabel htmlFor="for">CPF</FormLabel>
-              <FormInput type="password" required />
-              <FormLabel htmlFor="for">De quanto você precisa?</FormLabel>
-              <FormInput type="password" required />
-              <FormLabel htmlFor="for">Melhor plano para você:</FormLabel>
-              <FormInput type="password" required />
-              <FormButton type="submit">Simular</FormButton>
+              <FormInput type="number" required />
+              <FormLabel htmlFor="for">Telefone</FormLabel>
+              <FormInput type="number" placeholder="(xx)xxxxx-xxxx" pattern="" required />
+              <FormLabel htmlFor="for">Qual o valor?</FormLabel>
+              <FormInputRange
+                onChange={(e) => setValorCredito(e.target.value)}
+                type="range"
+                min="0"
+                max="20000"
+                required
+              />
+              <Label> R$ {valorCredito},00</Label>
+              <FormButton to="/credit" type="submit">Próximo</FormButton>
             </Form>
           </FormContent>
         </FormWrap>
-      </Container> 
+      </Container>
     </>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;

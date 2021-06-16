@@ -54,7 +54,7 @@ export const FormContent = styled.div`
 `;
 
 export const Form = styled.form`
-  background: #010101;
+  background: #2F2235;
   max-width: 600px;
   height: auto;
   width: 100%;
@@ -83,18 +83,36 @@ export const FormLabel = styled.label`
   margin-bottom: 8px;
   font-size: 14px;
   color: #fff;
+  justify-content: center;
 `;
 
 export const FormInput = styled.input`
-  padding: 16px 16px;
+  font-size: 16px;
+  padding: 12px 16px;
   margin-bottom: 32px;
   border: none;
   border-radius: 4px;
 `;
 
-export const FormButton = styled.button`
-  background: #C52AA0;
+export const FormInputRange = styled.input`
+  height: 80px;
   padding: 16px 0;
+  border: none;
+  border-radius: 4px;
+`
+export const Label = styled.label`
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 32px;
+`
+
+export const FormButton = styled(Link)`
+  background: #C52AA0;
+  padding: 16px 16px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
   border: none;
   border-radius: 4px;
   color: #fff;

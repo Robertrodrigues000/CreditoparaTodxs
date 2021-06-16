@@ -1,7 +1,7 @@
-import React from "react";
-import Icon1 from "../../images/svg-3.svg";
+import React, { useState } from "react";
+import Icon1 from "../../images/svg-1.svg";
 import Icon2 from "../../images/svg-5.svg";
-import Icon3 from "../../images/svg-6.svg";
+import Icon3 from "../../images/svg-7.svg";
 import {
   ServicesContainer,
   ServicesH1,
@@ -15,18 +15,18 @@ import {
 const Services = () => {
   return (
     <ServicesContainer id="services">
-      <ServicesH1>Tipos de crédito</ServicesH1>
+      <ServicesH1>Confira nossas opções de crédito</ServicesH1>
       <ServicesWrapper>
-        <ServicesCard>
+        <ServicesCard to="/signin">
           <ServicesIcon src={Icon1} />
           <ServicesH2>Crédito automotivo</ServicesH2>
           <ServicesP>
             Se você deseja comprar um veículo, mas precisa de um empréstimo para
-            te ajudar com esse objetivo, você pode contratar um crédito
+            te ajudar, você pode contratar um crédito
             automotivo.
           </ServicesP>
         </ServicesCard>
-        <ServicesCard>
+        <ServicesCard to="/signin">
           <ServicesIcon src={Icon2} />
           <ServicesH2>Crédito consignado</ServicesH2>
           <ServicesP>
@@ -34,7 +34,7 @@ const Services = () => {
             oferecido a servidores e colaboradores credenciados.
           </ServicesP>
         </ServicesCard>
-        <ServicesCard>
+        <ServicesCard to="/signin">
           <ServicesIcon src={Icon3} />
           <ServicesH2>Crédito para habitação</ServicesH2>
           <ServicesP>
