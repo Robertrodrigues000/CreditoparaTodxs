@@ -15,6 +15,10 @@ export const Container = styled.div`
     rgba(146, 18, 216, 1) 0%,
     rgba(197, 42, 160, 1) 100%
   );
+  @media screen and (max-width: 480px) {
+    min-height: 600px;
+  }
+  
 `;
 
 export const FormWrap = styled.div`
@@ -24,7 +28,9 @@ export const FormWrap = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 400px) {
-    height: 80%;
+    min-height: 400px;
+    height: 60%;
+    display: inline;
   }
 `;
 
@@ -107,7 +113,7 @@ export const Label = styled.label`
   margin-bottom: 32px;
 `
 
-export const FormButton = styled(Link)`
+export const FormButton = styled.button`
   background: #C52AA0;
   padding: 16px 16px;
   display: flex;

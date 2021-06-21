@@ -13,12 +13,8 @@ export const Container = styled.div`
     rgba(197, 42, 160, 1) 100%
   );
 
-  @media screen and (max-width: 768px) {
-    height: 1100px;
-  }
-
-  @media screen and (max-width: 480px) {
-    height: 1300px;
+  @media screen and (max-width: 1000px) {
+    height: 100%;
   }
 `;
 
@@ -38,24 +34,47 @@ export const Icon = styled(Link)`
 `;
 
 export const CreditWrap = styled.div`
-  display: flex;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  grid-gap: 16px;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
 `;
 
-export const Button = styled.button`
-  min-width: 100px;
-  padding: 16px 32px;
-  border-radius: 4px;
-  border: none;
-  background: #141414;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
+export const CreditCard = styled(Link)`
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  justify-content:flex-start;
+  align-items: center;
+  border-radius: 10px;
+  max-width: 340px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
 
   &:hover {
+    transform: scale(1.02);
+    border: 3px solid #2F2235;
     transition: all 0.2s ease-in-out;
-    transform: scale(1.05);
+    cursor: pointer;
   }
+`;
+
+export const CreditsIcon = styled.img`
+  height: 160px;
+  width: 160px;
+  margin-bottom: 10px;
 `;
 
 export const CreditH1 = styled.h1`
@@ -69,4 +88,14 @@ export const CreditH1 = styled.h1`
   @media screen and (max-width: 480px) {
     font-size: 2rem;
   }
+`;
+
+export const CreditsH2 = styled.h2`
+  font-size: 1rem;
+  margin-bottom: 10px;
+`;
+
+export const CreditsP = styled.p`
+  font-size: 1rem;
+  text-align: justify;
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 import { MdClose } from "react-icons/md"
 
 
@@ -15,23 +16,14 @@ export const Background = styled.div`
 `;
 
 export const ModalWrapper = styled.div`
-  width: 800px;
-  height: 500px;
+  width: 600px;
+  height: 700px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   position: relative;
   z-index: 10;
   border-radius: 10px;
-`;
-
-export const ModalImg = styled.img`
-  width: 100%;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
-  background: #000;
 `;
 
 export const ModalContent = styled.div`
@@ -42,16 +34,22 @@ export const ModalContent = styled.div`
   line-height: 1.8;
   color: #141414;
   p {
+    font-size: 1rem;
     margin-bottom: 1rem;
+    padding: 2rem;
   }
-  button {
-    cursor: pointer;
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-  }
+
 `;
+
+export const ButtonModal = styled(Link)`
+  cursor: pointer;
+  padding: 10px 24px;
+  background: #141414;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+`
 
 export const CloseModalButton = styled(MdClose)`
   cursor: pointer;

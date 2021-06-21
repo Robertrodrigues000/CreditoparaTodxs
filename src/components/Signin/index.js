@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Modal} from "../Modal"
 import {
   Container,
   FormWrap,
@@ -17,6 +18,12 @@ const SignIn = () => {
   const [nome, setNome] = useState("");
 
   const [valorCredito, setValorCredito] = useState(0);
+
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   return (
     <>
@@ -45,8 +52,10 @@ const SignIn = () => {
                 required
               />
               <Label> R$ {valorCredito},00</Label>
-              <FormButton to="/credit" type="submit">Próximo</FormButton>
+              <FormButton onSubmit={openModal} type="submit">Próximo</FormButton> 
+              <Modal showModal={showModal} setShowModal={setShowModal} />
             </Form>
+           
           </FormContent>
         </FormWrap>
       </Container>

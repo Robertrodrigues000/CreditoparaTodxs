@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           <SidebarLink to="signup" onClick={toggle}>Cadatre-se</SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
-          <SidebarRoute to="/signin">Entrar</SidebarRoute>
+          <SidebarRoute to="/credit">Simule</SidebarRoute>
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>

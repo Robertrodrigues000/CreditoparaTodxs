@@ -25,25 +25,24 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="vide/mp4"></VideoBg>
       </HeroBg>
       <HeroContent>
-        <HeroH1>Virtual Banking Made Easy</HeroH1>
+        <HeroH1>Chegou o CréditoParaTodxs</HeroH1>
         <HeroP>
-          Cadastre uma nova conta hoje e receba R$ 250,00 reais em créditos no
-          seu próximo pagamento
+          Escolha uma nossas ofertas de crédito e em poucos minutos você já pode
+          estar realizando seu sonho. Faça uma simulação agora
         </HeroP>
-        
-          <Button
-            to="/signin"
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            smooth={true}
-            duration={700}
-            spy={true}
-            exact="true"
-            offset={-80}
-          >
-            Vamos lá {hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
-        
+
+        <Button
+          to="/credit"
+          onMouseEnter={onHover}
+          onMouseLeave={onHover}
+          smooth={true}
+          duration={700}
+          spy={true}
+          exact="true"
+          offset={-80}
+        >
+          Vamos lá {hover ? <ArrowForward /> : <ArrowRight />}
+        </Button>
       </HeroContent>
     </HeroContainer>
   );
