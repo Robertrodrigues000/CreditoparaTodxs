@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { TextField } from "@material-ui/core";
+
 
 export const Container = styled.div`
   min-height: 692px;
@@ -16,7 +18,7 @@ export const Container = styled.div`
     rgba(197, 42, 160, 1) 100%
   );
   @media screen and (max-width: 480px) {
-    min-height: 600px;
+    min-height: 100%;
   }
   
 `;
@@ -67,7 +69,7 @@ export const Form = styled.form`
   z-index: 1;
   display: grid;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 60px 50px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 
@@ -114,7 +116,7 @@ export const Label = styled.label`
 `
 
 export const FormButton = styled.button`
-  background: #C52AA0;
+  background: #9413d7;
   padding: 16px 16px;
   display: flex;
   justify-content: center;
@@ -127,7 +129,7 @@ export const FormButton = styled.button`
   transition: all 0.2s ease-in-out;
 
   &:hover{
-    background: #1446A0;
+    background: #c52aa0;
     transition: all 0.2s ease-in-out;
   }
 `;
@@ -138,3 +140,7 @@ export const Text = styled.span`
   color: #fff;
   font-size: 14px;
 `;
+
+export const InputEdit = styled(TextField)`
+  margin-bottom: 70px;
+`

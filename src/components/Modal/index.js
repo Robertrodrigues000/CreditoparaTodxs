@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
+import ReactDom from "react-dom"
 import {
   Background,
   ModalWrapper,
@@ -40,7 +41,7 @@ export const Modal = ({ showModal, setShowModal }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
-  return (
+  return ReactDom.createPortal(
     <>
       {showModal ? (
         <Background ref={modalRef} onClick={closeModal}>
@@ -78,6 +79,7 @@ export const Modal = ({ showModal, setShowModal }) => {
           </animated.div>
         </Background>
       ) : null}
-    </>
+    </>,
+    document.getElementById('portal')
   );
 };
