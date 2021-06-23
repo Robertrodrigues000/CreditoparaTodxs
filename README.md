@@ -2,12 +2,12 @@
 A intenção é se comunicar de forma efetiva com seus respectivos clientes. Por exemplo, uma das necessidades é apresentar, de acordo com sua saúde financeira, propostas de empréstimo pessoal.
 
 Usei :
-# react
-# styled-components
-# react-hook-form
-# react-router-dom
-# react-scroll
-# material-ui
+- react
+- styled-components
+- react-hook-form
+- react-router-dom
+- react-scroll
+- material-ui
 
 ### Features
 
