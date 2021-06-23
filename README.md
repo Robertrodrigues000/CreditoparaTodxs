@@ -3,10 +3,10 @@ A intenção é se comunicar de forma efetiva com seus respectivos clientes. Por
 
 ### Features
 
-- [x] Liste as ofertas de crédito de acordo com o descritivo técnico.
-- [x] Detalhe a oferta do usuário ao momento de escolha
-- [x] Apresente a revisão das informações
-- [x] E permita-o realizar a contratação.
+- [x] Lista as ofertas de crédito de acordo com o descritivo técnico.
+- [x] Detalha a oferta do usuário ao momento de escolha
+- [x] Apresenta a revisão das informações
+- [x] E permite realizar a contratação.
 
 ### Pré-requisitos
 
