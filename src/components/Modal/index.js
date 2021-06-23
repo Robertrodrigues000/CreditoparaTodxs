@@ -1,15 +1,15 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
-import ReactDom from "react-dom"
+import ReactDom from "react-dom";
 import {
   Background,
   ModalWrapper,
   ModalContent,
   CloseModalButton,
-  ButtonModal
+  ButtonModal,
 } from "./modalElements";
 
-export const Modal = ({ showModal, setShowModal }) => {
+export const Modal = ({ showModal, setShowModal, data }) => {
   const modalRef = useRef();
 
   const animation = useSpring({
@@ -41,34 +41,34 @@ export const Modal = ({ showModal, setShowModal }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
+  console.log(data)
   return ReactDom.createPortal(
     <>
-      {showModal ? (
+      {showModal ?  (
         <Background ref={modalRef} onClick={closeModal}>
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
               <ModalContent>
                 <h1>Contrato de adesão</h1>
                 <p>
-                  O contrato de Empréstimo pessoal (o “Contrato”) celebrado via
-                  termo de adesão (o “Termo de Adesão”), com o DEVEDOR, e a HS
-                  FINANCEIRA, instituição financeira, inscrita no CNPJ sob o nº
-                  07.512.441/0001-11, com sede na cidade de Dois Irmãos/RS, na
-                  BR 116, n. 7070 (o “CREDOR”), será regido nos seguintes
-                  termos: DEFINIÇÕES Quando utilizados nestas cláusulas grifados
-                  dessa forma, salvo disposição expressa em sentido contrário,
-                  os termos descritos abaixo, terão os seguintes significados:
-                  a) Credor: instituição financeira responsável pela concessão
-                  do crédito; b) Devedor: pessoa física tomadora do crédito e
+                  Eu, {data.name} , de cpf {data.cpf} e telefone {data.tel}
+                  confirmo o contrato de Empréstimo pessoal celebrado via termo
+                  de adesão (o “Termo de Adesão”), com o DEVEDOR, e a CreditoParaTodx
+                  , instituição financeira, inscrita no CNPJ sob o nº
+                  00.000.000/0001-00, será regido nos seguintes termos:
+                  DEFINIÇÕES Quando utilizados nestas cláusulas grifados dessa
+                  forma, salvo disposição expressa em sentido contrário, os
+                  termos descritos abaixo, terão os seguintes significados: a)
+                  Credor: instituição financeira responsável pela concessão do
+                  crédito; b) Devedor: pessoa física tomadora do crédito e
                   responsável pelo pagamento das despesas realizadas; c) Dívida:
                   valor principal do Empréstimo descrito no Termo de Adesão,
                   acrescido dos juros, tributos, tarifas, taxas, seguros e
-                  demais encargos previstos no Contrato. d) Termo de Adesão:
-                  documento com as informações do DEVEDOR e da operação de
-                  crédito contratada, em conjunto com este documento, constitui,
-                  para todos os fins legais, verdadeiro Contrato de Adesão;
+                  demais encargos previstos no Contrato.
+                  <br />
+                  Contagem, {new Date().getMonth()} de {new Date().getFullYear()}
                 </p>
-                
+
                 <ButtonModal to="/">Aceito os termos</ButtonModal>
               </ModalContent>
               <CloseModalButton
@@ -80,6 +80,6 @@ export const Modal = ({ showModal, setShowModal }) => {
         </Background>
       ) : null}
     </>,
-    document.getElementById('portal')
+    document.getElementById("portal")
   );
 };

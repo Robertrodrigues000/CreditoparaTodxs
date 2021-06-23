@@ -15,18 +15,27 @@ import {
 } from "./SigninElements";
 
 const SignIn = () => {
-  const [nome, setNome] = useState("");
-  const [valorCredito, setValorCredito] = useState(0);
+  const [ sliderValue, setSliderValue ] = useState(0);
+  const [ formData, setFormData] = useState({ name:'' , cpf: '', tel:'', credit: '' });
+  const [ creditValue , setCreditValue ] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const { register, handleSubmit, watch, formState: { errors } } = useForm();  
   const onSubmit = (data) => {
+    setFormData({...data, credit: sliderValue}) ;
     openModal();
-    console.log(data);
   }
 
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
+
+  const handleChange = (event, newValue) => {
+    event.preventDefault();
+    setSliderValue(newValue);
+    setCreditValue(newValue);
+  };
+
+  console.log("credito: ", creditValue)
 
   return (
     <>
@@ -49,16 +58,17 @@ const SignIn = () => {
               <FormLabel htmlFor="credit">Qual o valor de crédito?</FormLabel>  
               <PrettoSlider
                 id="credit"
-                valueLabelDisplay="on"
+                valueLabelDisplay="auto"
                 min={0}
                 step={50}
                 max={20000}
                 aria-label="pretto slider"
-                defaultValue={10000}
-                {...register("credit")}
+                value = {sliderValue}
+                onChange= {handleChange}
               />
+              <span >R$ {creditValue},00</span>              
               <FormButton type="submit">Próximo</FormButton>
-              <Modal showModal={showModal} setShowModal={setShowModal} />
+              <Modal showModal={showModal} setShowModal={setShowModal} data={formData}/>
             </Form>
           </FormContent>
         </FormWrap>
