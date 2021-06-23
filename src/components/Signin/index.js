@@ -12,6 +12,8 @@ import {
   FormLabel,
   FormInput,
   FormButton,
+  Errors,
+  SpanCredit
 } from "./SigninElements";
 
 const SignIn = () => {
@@ -35,8 +37,6 @@ const SignIn = () => {
     setCreditValue(newValue);
   };
 
-  console.log("credito: ", creditValue)
-
   return (
     <>
       <Container>
@@ -46,15 +46,15 @@ const SignIn = () => {
             <Form onSubmit={handleSubmit(onSubmit)}>
               <FormH1>Informe seus dados</FormH1>
               <FormLabel htmlFor="name">Name</FormLabel>
+                {errors.name && errors.name.type === "required" && <Errors>Campo requerido</Errors>}
               <FormInput id="name" {...register('name', { required: true })} />
-                {errors.name && errors.name.type === "required" && <span>Campo requerido</span>}
               <FormLabel htmlFor="cpf">CPF</FormLabel>
+                {errors.cpf && errors.cpf.type === "required" && <Errors>Campo requerido</Errors>}
+                {errors.cpf && errors.cpf.type === "minLength" && <Errors>CPF precisa ter 11 números</Errors> }
               <FormInput id="cpf" {...register('cpf', { required: true, minLength: 11 })} />
-                {errors.cpf && errors.cpf.type === "required" && <span>Campo requerido</span>}
-                {errors.cpf && errors.cpf.type === "minLength" && <span>CPF precisa ter 11 números</span> }
               <FormLabel htmlFor="tel">Telefone</FormLabel>
+                {errors.tel && errors.tel.type === "required" && <Errors>Campo requerido</Errors>}
               <FormInput id="tel" {...register('tel', { required: true })} />
-                {errors.tel && errors.tel.type === "required" && <span>Campo requerido</span>}
               <FormLabel htmlFor="credit">Qual o valor de crédito?</FormLabel>  
               <PrettoSlider
                 id="credit"
@@ -66,7 +66,7 @@ const SignIn = () => {
                 value = {sliderValue}
                 onChange= {handleChange}
               />
-              <span >R$ {creditValue},00</span>              
+              <SpanCredit >R$ {creditValue},00</SpanCredit>              
               <FormButton type="submit">Próximo</FormButton>
               <Modal showModal={showModal} setShowModal={setShowModal} data={formData}/>
             </Form>

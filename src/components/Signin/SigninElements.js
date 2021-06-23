@@ -144,3 +144,15 @@ export const Text = styled.span`
 export const InputEdit = styled(TextField)`
   margin-bottom: 70px;
 `
+
+export const Errors = styled.span`
+color: red;
+margin-bottom: 5px;
+`
+
+export const SpanCredit = styled.span`
+color: #fff;
+display: flex;
+justify-content: center;
+margin-bottom: 32px;
+`

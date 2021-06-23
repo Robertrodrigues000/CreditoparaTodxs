@@ -5,7 +5,7 @@ import Slider from '@material-ui/core/Slider';
 export const PrettoSlider = withStyles({
   root: {
     marginTop: 30, 
-    marginBottom: 30, 
+    marginBottom: 10, 
     color: '#9413d7',
     height: 8,
   },

@@ -41,20 +41,22 @@ export const Modal = ({ showModal, setShowModal, data }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
-  console.log(data)
+  console.log(data);
   return ReactDom.createPortal(
     <>
-      {showModal ?  (
+      {showModal ? (
         <Background ref={modalRef} onClick={closeModal}>
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
               <ModalContent>
                 <h1>Contrato de adesão</h1>
                 <p>
-                  Eu, {data.name} , de cpf {data.cpf} e telefone {data.tel}
-                  confirmo o contrato de Empréstimo pessoal celebrado via termo
-                  de adesão (o “Termo de Adesão”), com o DEVEDOR, e a CreditoParaTodx
-                  , instituição financeira, inscrita no CNPJ sob o nº
+                  Eu, <u>{data.name}</u> , de cpf <u>{data.cpf}</u> e telefone
+                  <u> {data.tel} </u>
+                  confirmo o contrato de Empréstimo pessoal no valor de{" "}
+                  <u> R$ {data.credit},00 </u>celebrado via termo de adesão (o
+                  “Termo de Adesão”), com o DEVEDOR, e a CreditoParaTodx ,
+                  instituição financeira, inscrita no CNPJ sob o nº
                   00.000.000/0001-00, será regido nos seguintes termos:
                   DEFINIÇÕES Quando utilizados nestas cláusulas grifados dessa
                   forma, salvo disposição expressa em sentido contrário, os
@@ -66,7 +68,8 @@ export const Modal = ({ showModal, setShowModal, data }) => {
                   acrescido dos juros, tributos, tarifas, taxas, seguros e
                   demais encargos previstos no Contrato.
                   <br />
-                  Contagem, {new Date().getMonth()} de {new Date().getFullYear()}
+                  Contagem, {new Date().getMonth()} de{" "}
+                  {new Date().getFullYear()}
                 </p>
 
                 <ButtonModal to="/">Aceito os termos</ButtonModal>
